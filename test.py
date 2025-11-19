@@ -39,11 +39,52 @@
 #         break
 
 
-def example_function(numbers):
-    for x in numbers:
-        print(x)
+# def example_function(numbers):
+#     for x in numbers:
+#         print(x)
 
-example_function(12, 45, 65, 78, 91)
+# example_function(12, 45, 65, 78, 91)
 
 
+# def multiply_list(numbers):
+#     total = 1
+#     for n in numbers:
+#         total *= n
+#     return total
 
+
+# some_list =  [18, 0, 0] 
+# magic = multiply_list(some_list) 
+# print(magic) 
+
+
+"""Enqueue"""
+
+existing_queue = [1, 2, 3, "mom", 12]
+
+MAX_SIZE = 6
+
+class QueTask:
+    try:
+        if len(existing_queue) >= MAX_SIZE:
+            raise Exception("My man, array is full")
+        else:
+            user_input = input("Enter anything: ")
+            enque = existing_queue.insert(0, user_input)
+            print(existing_queue)
+    except Exception as e:
+            print("Error caught:", e)
+
+
+"""Dequeue"""
+
+some_queue = [1]
+class DeQUE:
+    try:
+        if len(some_queue) < 1:
+            raise Exception("Ay Ay Ay, The Queue is empry")
+        else:
+            deque = some_queue.pop(0)
+            print("Item deleted", some_queue)
+    except Exception as sad:
+        print("Error found: ", sad)
