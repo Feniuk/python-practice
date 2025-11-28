@@ -60,31 +60,54 @@
 
 """Enqueue"""
 
-existing_queue = [1, 2, 3, "mom", 12]
+# existing_queue = [1, 2, 3, "mom", 12]
 
-MAX_SIZE = 6
+# MAX_SIZE = 6
 
-class QueTask:
-    try:
-        if len(existing_queue) >= MAX_SIZE:
-            raise Exception("My man, array is full")
-        else:
-            user_input = input("Enter anything: ")
-            enque = existing_queue.insert(0, user_input)
-            print(existing_queue)
-    except Exception as e:
-            print("Error caught:", e)
+# class QueTask:
+#     try:
+#         if len(existing_queue) >= MAX_SIZE:
+#             raise Exception("My man, array is full")
+#         else:
+#             user_input = input("Enter anything: ")
+#             enque = existing_queue.insert(0, user_input)
+#             print(existing_queue)
+#     except Exception as e:
+#             print("Error caught:", e)
 
 
 """Dequeue"""
 
-some_queue = [1]
-class DeQUE:
-    try:
-        if len(some_queue) < 1:
-            raise Exception("Ay Ay Ay, The Queue is empry")
-        else:
-            deque = some_queue.pop(0)
-            print("Item deleted", some_queue)
-    except Exception as sad:
-        print("Error found: ", sad)
+# some_queue = [1]
+# class DeQUE:
+#     try:
+#         if len(some_queue) < 1:
+#             raise Exception("Ay Ay Ay, The Queue is empry")
+#         else:
+#             deque = some_queue.pop(0)
+#             print("Item deleted", some_queue)
+#     except Exception as sad:
+#         print("Error found: ", sad)
+
+
+"""Binary Tree"""
+num_list = [1, 3, 4, 8, 6]
+tree_root = 4 
+
+left_list =[]
+right_list = []
+
+if len(num_list) != len(set(num_list)):
+    raise ValueError("You have a repeating item in your list")
+else:
+    print("")
+
+for element in num_list:
+    if element > tree_root:
+        right_list.append(element)
+    elif element < tree_root:
+        left_list.append(element)
+
+print("Right: ", right_list)
+print("Left: ", left_list)
+
