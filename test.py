@@ -97,17 +97,52 @@ tree_root = 4
 left_list =[]
 right_list = []
 
+
+def split_by_root(num_list, tree_root):
+    if not num_list:
+        return [], []  
+
+    head = num_list[0]
+    tail = num_list[1:]
+
+    left_list, right_list = split_by_root(tail, tree_root)
+
+    if head < tree_root:
+        left_list.append(head)
+    elif head > tree_root:
+        right_list.append(head)
+
+    return left_list, right_list
+
+
 if len(num_list) != len(set(num_list)):
     raise ValueError("You have a repeating item in your list")
 else:
     print("")
 
-for element in num_list:
-    if element > tree_root:
-        right_list.append(element)
-    elif element < tree_root:
-        left_list.append(element)
+left_list, right_list = split_by_root(num_list, tree_root)
 
 print("Right: ", right_list)
 print("Left: ", left_list)
 
+
+
+
+# def vowel_function(string):
+#     vowels = "aeiouAEIOU"
+#     num_vowels = 0
+#     for letter in string:
+#         if letter in vowels:
+#             num_vowels += 1
+#     return num_vowels
+
+# print(vowel_function("abcdA"))
+
+
+# def list_multiply(some_list):
+#     result = 1
+#     for i in some_list:
+#         result *= i
+#     return result
+
+# print(list_multiply([1, 3, 5]))
