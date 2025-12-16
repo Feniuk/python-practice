@@ -91,58 +91,111 @@
 
 
 """Binary Tree"""
-num_list = [1, 3, 4, 8, 6]
-tree_root = 4 
+# num_list = [1, 3, 4, 8, 6]
+# tree_root = 4 
 
-left_list =[]
-right_list = []
-
-
-def split_by_root(num_list, tree_root):
-    if not num_list:
-        return [], []  
-
-    head = num_list[0]
-    tail = num_list[1:]
-
-    left_list, right_list = split_by_root(tail, tree_root)
-
-    if head < tree_root:
-        left_list.append(head)
-    elif head > tree_root:
-        right_list.append(head)
-
-    return left_list, right_list
+# left_list =[]
+# right_list = []
 
 
-if len(num_list) != len(set(num_list)):
-    raise ValueError("You have a repeating item in your list")
-else:
-    print("")
+# def split_by_root(num_list, tree_root):
+#     if not num_list:
+#         return [], []  
 
-left_list, right_list = split_by_root(num_list, tree_root)
+#     head = num_list[0]
+#     tail = num_list[1:]
 
-print("Right: ", right_list)
-print("Left: ", left_list)
+#     left_list, right_list = split_by_root(tail, tree_root)
 
+#     if head < tree_root:
+#         left_list.append(head)
+#     elif head > tree_root:
+#         right_list.append(head)
 
-
-
-# def vowel_function(string):
-#     vowels = "aeiouAEIOU"
-#     num_vowels = 0
-#     for letter in string:
-#         if letter in vowels:
-#             num_vowels += 1
-#     return num_vowels
-
-# print(vowel_function("abcdA"))
+#     return left_list, right_list
 
 
-# def list_multiply(some_list):
-#     result = 1
-#     for i in some_list:
-#         result *= i
-#     return result
+# if len(num_list) != len(set(num_list)):
+#     raise ValueError("You have a repeating item in your list")
+# else:
+#     print("")
 
-# print(list_multiply([1, 3, 5]))
+# left_list, right_list = split_by_root(num_list, tree_root)
+
+# print("Right: ", right_list)
+# print("Left: ", left_list)
+
+
+"""Python Fuctions"""
+ 
+
+def vowel_function(string):
+    vowels = "aeiouAEIOU"
+    num_vowels = 0
+    for letter in string:
+        if letter in vowels:
+            num_vowels += 1
+    return num_vowels
+
+
+
+def list_multiply(some_list):
+    result = 1
+    for i in some_list:
+        result *= i
+    return result
+
+
+
+def palindrome(str1):
+    if str1 == str1[::-1]:
+        return True
+    return False
+
+
+def unique_int(integer1):
+    count = 0
+    seen = set()
+    for integer2 in str(integer1):
+        if integer2 not in seen:
+            seen.add(integer2)
+            count += 1
+    return f"Unique numbers count: {count}, those numbers are: {seen}"
+
+
+
+def count_char(string0):
+    result_dict = {}
+    for letter in str(string0):
+        if letter in result_dict:
+            result_dict[letter] += 1
+        else:
+            result_dict[letter] = 1
+    return result_dict
+
+
+
+def common_number (list1, list2):
+    common = 0
+    for elements1 in list1:
+        for elements2 in list2:
+            if elements1 == elements2:
+                common += 1
+    return common
+
+
+def converter(num_list):
+    plain_string = ""
+    for element in num_list:
+        plain_string += (str(element))
+    return int(plain_string)
+
+
+def all_divisors(nuumber):
+    result = []
+    for divisor in range(1, nuumber + 1):
+         if nuumber % divisor == 0:
+             result.append(divisor)
+    return result
+
+print(all_divisors(34))
